@@ -146,6 +146,7 @@ Type Conversion:
 - String(value) -> to string
 - Number(value) -> to number
 - Boolean(value) -> to true/false
+https : // 262. ecma-international.https : // 262. ecma-international.org/5.1/#sec-9.1
 */
 
 //////////////////////////////////////////////////
