@@ -14,6 +14,8 @@ for (const [key, value] of myMap) {
 }
 
 // ✅ forEach on Map
-myMap.forEach((value, key) => {
+myMap.forEach((value, key) => {    // forEach takes value first, then key
+  // Note: forEach on Map takes (value, key) as parameters
   console.log(`Map forEach: ${key} => ${value}`);
 });
+  
