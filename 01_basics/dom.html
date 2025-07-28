@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai with Raj</title>
+    <style>
+        body{
+            background-color: black;
+            color: aliceblue;
+        }
+    </style>
+    
+</head>
+<body>
+    <ul class="langName">
+    <li>JavaScrript</li>
+
+    </ul>
+</body>
+<script>
+    function Lang(Language){
+       const li = document.createElement('li');
+       li.appendChild(document.createTextNode(Language));
+       document.querySelector('.langName').appendChild(li)  
+      
+    
+    }
+     Lang("python")
+     const firstLang = document.querySelector('li:first-child');
+     const newName = document.createElement('li')
+     newName.textContent = "Hindi"
+     firstLang.replaceWith(newName)
+    
+     
+</script>
+</html>
