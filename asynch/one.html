@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynch</title>
+  </head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+  <body>
+    <h1>Asynchronous JavaScript</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    const changeButton= () => {
+        const stop =  document.getElementById('stop');
+        stop.innerText = "Fixed"
+
+      
+      alert("It will change now!");
+    };
+    const stop = document.getElementById('stop').addEventListener('click', function(){
+        clearTimeout(ChangeName)
+        console.log('Stopped');
+        
+    })
+    const ChangeName = setTimeout(changeButton, 5000);
+    
+   
+  </script>
+</html>
