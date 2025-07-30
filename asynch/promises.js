@@ -38,7 +38,7 @@
 
 const promiseFour = new Promise((resolve, reject) => {
   setTimeout(() => {
-    const error = true;
+    const error = false;
     if (!error) {
       console.log("Fetching Data");
       resolve({ name: "Raj", age: 23 });
@@ -47,15 +47,56 @@ const promiseFour = new Promise((resolve, reject) => {
     }
   }, 1000);
 });
-promiseFour
-  .then((Data) => {
-    console.log("Promise Consumed");
-    console.log(Data.name);
-  })
-  .catch((error) => {
-    console.log("Error!!");
+
+//now try promisefour with asynch 
+const getUser = async () => {
+  try {
+    const result = await promiseFour;
+    console.log(result.name);
+    console.log('Sucessfully Fetched')
+  } catch (error) {
     console.log(error);
-  })
-  .finally(()=>{
-    console.log('Task complete')
-  })
+  }
+};
+
+getUser();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// promiseFour
+//   .then((Data) => {
+//     console.log("Promise Consumed");
+//     console.log(Data.name);
+//   })
+//   .catch((error) => {
+//     console.log("Error!!");
+//     console.log(error);
+//   })
+//   .finally(()=>{
+//     console.log('Task complete')
+//   })
