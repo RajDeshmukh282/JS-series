@@ -73,14 +73,32 @@
 //     console.log('Task complete')
 //   })
 
-async function getUserData() {
-  try {
-    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+// async function getUserData() {
+//   try {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users");
 
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.log("Error Getting Data", error);
-  }
-}
-getUserData();
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log("Error Getting Data", error);
+//   }
+// }
+// getUserData();
+
+//trying with then catch 
+
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json(); // Convert to actual JSON data
+  })
+  .then((data) => {
+    console.log("User data:", data);
+  })
+  .catch((error) => {
+    console.log("Error:", error.message);
+  });
+
+
