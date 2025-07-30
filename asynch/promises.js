@@ -36,58 +36,30 @@
 //     console.log(error);
 //   });
 
-const promiseFour = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    const error = false;
-    if (!error) {
-      console.log("Fetching Data");
-      resolve({ name: "Raj", age: 23 });
-    } else {
-      reject("Error in Promise");
-    }
-  }, 1000);
-});
+// const promiseFour = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     const error = false;
+//     if (!error) {
+//       console.log("Fetching Data");
+//       resolve({ name: "Raj", age: 23 });
+//     } else {
+//       reject("Error in Promise");
+//     }
+//   }, 1000);
+// });
 
-//now try promisefour with asynch 
-const getUser = async () => {
-  try {
-    const result = await promiseFour;
-    console.log(result.name);
-    console.log('Sucessfully Fetched')
-  } catch (error) {
-    console.log(error);
-  }
-};
+//now try promisefour with asynch
+// const getUser = async () => {
+//   try {
+//     const result = await promiseFour;
+//     console.log(result.name);
+//     console.log('Sucessfully Fetched')
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
-getUser();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// getUser();
 // promiseFour
 //   .then((Data) => {
 //     console.log("Promise Consumed");
@@ -100,3 +72,15 @@ getUser();
 //   .finally(()=>{
 //     console.log('Task complete')
 //   })
+
+async function getUserData() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users");
+
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    console.log("Error Getting Data", error);
+  }
+}
+getUserData();
