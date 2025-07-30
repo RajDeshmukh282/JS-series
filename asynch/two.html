@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Async Buttons</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #d87512; /* will be changed by JS */
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      h1 {
+        color: #fff;
+        margin-bottom: 40px;
+        font-size: 2.5rem;
+      }
+
+      .button-container {
+        display: flex;
+        gap: 30px;
+      }
+
+      button {
+        padding: 30px 50px;
+        font-size: 1.5rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Asynchronous JavaScript</h1>
+    <div class="button-container">
+      <button id="start">Start</button>
+      <button id="stop">Stop</button>
+    </div>
+
+  
+  </body>
+    <script>
+     const startBtn = document.querySelector("#start");
+const stopBtn = document.querySelector("#stop");
+let intervalId; // Declare a variable to store the interval ID
+
+const sayDate = function () {
+  console.log("Hello, World!", Date.now());
+};
+
+startBtn.addEventListener("click", function () {
+  // Only start a new interval if one isn't already running
+  if (!intervalId) {
+    intervalId = setInterval(sayDate, 1000);
+    console.log("Started:", intervalId);
+  }
+});
+
+stopBtn.addEventListener("click", function () {
+  clearInterval(intervalId);
+  intervalId = null; // Clear the interval ID after stopping
+  console.log("Stopped");
+});
+
+// Optional: Change background color dynamically for a more interactive feel
+document.body.style.backgroundColor = '#28a745'; // A nice green
+    </script>
+</html>
